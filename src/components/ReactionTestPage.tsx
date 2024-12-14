@@ -27,19 +27,24 @@ export default function ReactionTestPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-grow container mx-auto p-4" style={{ marginTop: '100px' }}>
-        <Card className="w-[350px] mx-auto">
-          <CardHeader className="flex flex-row items-center space-x-4">
-            <Logo className="w-12 h-12 flex-shrink-0" />
+      <main className="flex-grow container mx-auto p-4 max-w-screen-md" style={{ marginTop: '50px' }}>
+        <Card className="w-full max-w-[350px] md:max-w-[450px] mx-auto">
+          <CardHeader className="flex flex-row items-center space-x-4 flex-wrap sm:flex-nowrap">
+            <Logo className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex-shrink-0" />
             <div>
-              <CardTitle className="text-2xl">반응 속도 테스트</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl">반응 속도 테스트</CardTitle>
+              <CardDescription className="text-sm sm:text-base md:text-lg">
                 당신의 반응 속도를 측정해보세요!
               </CardDescription>
             </div>
           </CardHeader>
           <CardFooter className="flex justify-center">
-            <Button onClick={handleStart}>시작</Button>
+            <Button 
+              onClick={handleStart}
+              className="text-sm sm:text-base md:text-lg md:px-8 md:py-6"
+            >
+              시작
+            </Button>
           </CardFooter>
         </Card>
         {showTest && (

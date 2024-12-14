@@ -115,7 +115,6 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
         setShowResult(true);
         setIsClickable(false);
         setTimeout(() => setIsClickable(true), 1000);
-
       } else if (state === 'go') {
         setEndTime(Date.now());
         setState('done');
@@ -130,11 +129,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
         setReactionTime(time);
         setShowResult(true);
       }
-    }, [
-      state,
-      startTime,
-      endTime,
-    ]);
+    }, [state, startTime, endTime]);
 
     useEffect(() => {
       return () => {
@@ -148,16 +143,16 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
           return age;
         }
       }
-      return '60대 이상';
+      return '👴 60대 이상';
     };
 
     return (
-      <Card className="w-[350px] mx-auto mt-4">
-        <CardHeader className="flex flex-row items-center space-x-4">
-          <Logo className="w-12 h-12 flex-shrink-0" />
+      <Card className="w-full max-w-[350px] md:max-w-[450px] mx-auto mt-4">
+        <CardHeader className="flex flex-row items-center space-x-4 flex-wrap sm:flex-nowrap">
+          <Logo className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex-shrink-0" />
           <div>
-            <CardTitle className="text-2xl">반응 속도 테스트</CardTitle>
-            <CardDescription>
+            <CardTitle className="text-xl sm:text-2xl md:text-3xl">반응 속도 테스트</CardTitle>
+            <CardDescription className="text-sm sm:text-base md:text-lg">
               <span>
                 <span className="text-green-500">초록색</span>으로 변하면
                 클릭하세요!
@@ -167,7 +162,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
         </CardHeader>
         <CardContent>
           <motion.div
-            className={`w-full h-40 flex items-center justify-center cursor-pointer mb-4 rounded-lg`}
+            className="w-full h-32 sm:h-40 md:h-48 flex items-center justify-center cursor-pointer mb-4 rounded-lg text-sm sm:text-base md:text-lg"
             animate={{ backgroundColor: currentColor }}
             onClick={handleClick}
             whileTap={{ scale: 0.95 }}
@@ -176,6 +171,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="text-center px-4"
             >
               {state === 'waiting' && '클릭하여 시작'}
               {state === 'ready' && '🫀두근두근,,'}
@@ -194,7 +190,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
               >
                 {state === 'early' ? (
                   <motion.p
-                    className="mt-2"
+                    className="mt-2 text-sm sm:text-base md:text-lg"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
@@ -209,7 +205,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
                         className="w-full"
                       />
                       <motion.p
-                        className="mt-2"
+                        className="mt-2 text-sm sm:text-base md:text-lg"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
@@ -232,7 +228,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
             variant="outline"
             onClick={startTest}
             disabled={!isClickable || state === 'ready' || state === 'go'}
-            className="mx-auto"
+            className="mx-auto text-sm sm:text-base md:text-lg md:px-8 md:py-6"
           >
             다시 시도
           </Button>
