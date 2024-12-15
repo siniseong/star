@@ -23,11 +23,11 @@ import Logo from './Logo';
 
 const ageRanges = {
   '🏂 10대': { min: 0, max: 250 },
-  '🧑‍💻 20대': { min: 250, max: 300 },
-  '🦸 30대': { min: 300, max: 350 },
-  '🧑‍🎄 40대': { min: 350, max: 400 },
-  '👩‍🔧 50대': { min: 400, max: 450 },
-  '👴 60대 이상': { min: 450, max: Infinity },
+  '🧑‍💻 20대': { min: 250, max: 350 },
+  '🦸 30대': { min: 350, max: 450 },
+  '🧑‍🎄 40대': { min: 450, max: 550 },
+  '👩‍🔧 50대': { min: 550, max: 650 },
+  '👴 60대 이상': { min: 650, max: Infinity },
 };
 
 type TestState = 'waiting' | 'ready' | 'go' | 'early' | 'done';
