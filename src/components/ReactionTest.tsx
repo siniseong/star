@@ -176,7 +176,7 @@ const ReactionTest = forwardRef<ReactionTestRef, ReactionTestProps>(
               {state === 'waiting' && '클릭하여 시작'}
               {state === 'ready' && '🫀두근두근,,'}
               {state === 'go' && '지금!!'}
-              {state === 'early' && '초록색 되면 눌려라 했다.'}
+              {state === 'early' && '초록색 되면 눌러라 했다.'}
               {state === 'done' && `${reactionTime}ms`}
             </motion.span>
           </motion.div>
