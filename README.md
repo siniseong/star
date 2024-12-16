@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/ac566122-8692-4632-a47c-3effac426288
 ## 🛠 사용한 기술들
 [![My Skills](https://skillicons.dev/icons?i=nextjs,styledcomponents,docker,nginx)](https://skillicons.dev)
 
-## Docker Build & Run
+## 🛳 도커 빌드, 실행
     docker build -t suuk .
     
     docker run -p 3000:3000 suuk # Next.js 실행 포트로 수정해주세요. 
